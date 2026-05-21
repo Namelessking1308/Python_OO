@@ -11,8 +11,8 @@ class Enclos:
     def ajouter_animal(self, animal : Elephant):
         if not hasattr(self, 'animal'):
             self.animaux = []
-            self.animaux.append(animal)
-            return f"{animal} ajouter à l'enclos."
+            self.animaux.append(animal.nom)
+            return f"{animal.nom} ajouter à l'enclos."
         
     def enleve_animal(self, animal : Elephant):
         if animal.en_vie is not True:
