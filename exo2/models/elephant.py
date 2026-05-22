@@ -55,6 +55,17 @@ class Elephant:
 
         return(f"L'élephant {self._nom} a manger !\nAppétit : {self._appetit}/100\nSatisfaction : {self._satisfaction}/100")
     
+    def laver(self, soigneur = None):
+        if not hasattr(self, 'nom') or not self.en_vie:
+            return "Erreur Éléphant non défini ou mort..."
+        
+        self._satisfaction = min(100, self.satisfaction + 30)
+        
+        if soigneur:
+            return(f"L'élephant {self._nom} est la vé par {self.soigneur} !\nSatisfaction : {self._satisfaction}/100")
+        else:
+            return(f"L'élephant {self._nom} se lave !\nSatisfaction : {self._satisfaction}/100")
+
     def afficher_etat(self):
         if not hasattr(self, '_nom'):
             return "Erreur, Élephant non défini..."

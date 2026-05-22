@@ -1,3 +1,5 @@
+from datetime import datetime
+
 class Soigneur:
 
     # Region Attributs
@@ -32,6 +34,18 @@ class Soigneur:
     @property
     def nombre_animaux_responsable(self):
         return self._nombre_animaux_responsable
+    
+    @property
+    def age(self):
+        if not hasattr(self, '_date_naissance'):
+            return 0
+        try:
+            date_naissance = datetime.strptime(self._date_naissance, '%d/%m/%Y')
+            date_du_jour = datetime.today()
+            age = date_du_jour.year - date_naissance.year - ((date_du_jour.month, date_du_jour.day) < (date_naissance.month, date_naissance.day))
+            return age
+        except ValueError:
+            return "Date de naissance invalide (format attendu: JJ/MM/AAAA)"
     
     # Endregion
 
