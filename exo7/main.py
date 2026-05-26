@@ -66,7 +66,7 @@ def main():
 
 	# print(dumbo.declancher_bruit())
 
-	Outils.clear_console("cls")
+	Outils.clear_console()
 
 if __name__ == "__main__":
 	main()

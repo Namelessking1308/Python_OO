@@ -4,11 +4,9 @@ import os
 class Outils:
 
     @staticmethod
-    def clear_console(clear):
-        clear = os.system("cls")
-        return clear
+    def clear_console():
+        os.system("cls")
     
     @staticmethod
     def pauses(seconde):
-        seconde = time.sleep(3)
-        return seconde
+        time.sleep(seconde)
