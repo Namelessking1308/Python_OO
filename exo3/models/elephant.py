@@ -30,4 +30,6 @@ class Elephant(Animal):
     def aspirer_eau(self):
         return f"{self.nom} aspire de l'eau !"
 
+    def observer_environnement(self):
+        return f"{self.nom} observe son environnement..."
     # endregion

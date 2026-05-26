@@ -1,4 +1,6 @@
-class Enclos:
+from .animal import Animal
+
+class Enclos(Animal):
 
 	#region Attributs
 

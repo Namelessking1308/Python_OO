@@ -32,4 +32,6 @@ class Girafe(Animal):
     def boire_eau(self):
         Elephant.manger()
 
+    def observer_environnement(self):
+        return f"{self.nom} observe son environnement..."
     # Endregion

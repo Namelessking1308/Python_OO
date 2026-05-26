@@ -115,6 +115,4 @@ class Animal:
 	def decede(self):
 		self.en_vie = False
 		return f"😵 {self.nom} est tombé malade ou est mort...\n"
-    
-
 	#endregion

@@ -56,7 +56,9 @@ def main():
 
 	# Bonus...
 	print(savane.passer_jour())
+	print(dumbo.observer_environnement())
 	print(foret.passer_jour())
+	print(sophie.observer_environnement())
 	print(savane.passer_jour())
 	print(foret.passer_jour())
 	print(savane.passer_jour())
