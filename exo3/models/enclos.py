@@ -71,28 +71,4 @@ class Enclos:
 			resultat += animal.afficher_etat() + "\n\n"
 		return resultat
 
-	def passer_jour(self):
-		"""
-		Simule le passage d'une journée
-		"""
-		if not hasattr(self, 'liste_animaux') or not self.liste_animaux:
-			return f"L'enclos {self.nom} est vide"
-
-		resultat = f"\n 🌄 Passage d'une journée dans {self.nom} 🌄\n"
-		resultat += '-' * 42 + "\n"
-
-		for animal in self.liste_animaux:
-			if animal.en_vie:
-				animal.passe_le_temps()
-
-				resultat += f"{animal.nom} => Appétit = {animal.appetit}/100 | Satisfaction : {animal.satisfaction}/100\n"
-
-				if animal.appetit >= 95 or animal.satisfaction <= 5:
-					resultat += animal.decede()
-			else:
-				resultat += f"{animal.nom} est déjà mort\n"
-    
-		resultat += '-' * 42 + "\n"
-		return resultat
-
 	#endregion

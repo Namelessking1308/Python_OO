@@ -42,6 +42,10 @@ class Animal:
 	@property
 	def en_vie(self):
 		return self.__en_vie
+	
+	@en_vie.setter
+	def en_vie(self, value):
+		self.__en_vie = value
 
 	@property
 	def soigneur(self):
@@ -79,5 +83,38 @@ class Animal:
 			self.satisfaction = min(100, self.satisfaction + 15)
 			return (f"💦 {self.nom} se lave \n"
                     f"    Satisfaction   : {self.satisfaction}/100")
+
+	def passer_jour(self):
+		"""
+		Simule le passage d'une journée
+		"""
+		if not hasattr(self, 'liste_animaux') or not self.liste_animaux:
+			return f"L'enclos {self.nom} est vide"
+
+		resultat = f"\n 🌄 Passage d'une journée dans {self.nom} 🌄\n"
+		resultat += '-' * 42 + "\n"
+
+		for animal in self.liste_animaux:
+			if animal.en_vie:
+				animal.passe_le_temps()
+
+				resultat += f"{animal.nom} => Appétit = {animal.appetit}/100 | Satisfaction : {animal.satisfaction}/100\n"
+
+				if animal.appetit >= 95 or animal.satisfaction <= 5:
+					resultat += animal.decede()
+			else:
+				resultat += f"{animal.nom} est déjà mort\n"
+    
+		resultat += '-' * 42 + "\n"
+		return resultat
+
+	def passe_le_temps(self):
+		self.appetit = max(0, self.appetit - 15)
+		self.satisfaction = min(100, self.satisfaction - 25)
+
+	def decede(self):
+		self.en_vie = False
+		return f"😵 {self.nom} est tombé malade ou est mort...\n"
+    
 
 	#endregion

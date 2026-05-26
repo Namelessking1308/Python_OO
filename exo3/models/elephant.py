@@ -24,14 +24,6 @@ class Elephant(Animal):
                 f"    Appétit 		 : {self.appetit}/100\n"
                 f"    Satisfaction   : {self.satisfaction}/100")
 
-    def passe_le_temps(self):
-        self.appetit = max(0, self.appetit - 15)
-        self.satisfaction = min(100, self.satisfaction - 25)
-
-    def decede(self):
-        self.en_vie = False
-        return f"😵 {self.nom} est tombé malade ou est mort...\n"
-    
     def prendre_bain_de_boue(self):
         return f"{self.nom} prend un bain de boue..."
     
