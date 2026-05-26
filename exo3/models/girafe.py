@@ -1,8 +1,9 @@
-from models import Elephant
+from .animal import Animal
+from .elephant import Elephant
 
     # Region Attributs
 
-class Girafe(Elephant):
+class Girafe(Animal):
     
     def definir(self, nom, appetit, satisfaction, en_vie, soigneur, longueur_cou):
         super().definir(nom , appetit, satisfaction, en_vie , soigneur)

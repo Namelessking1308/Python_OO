@@ -2,7 +2,7 @@ from models import Soigneur, Elephant, Enclos, Girafe
 
 def main():
 	print("=" * 15)
-	print("Correctif Exo_2")
+	print("Correctif Exo_3")
 	print("=" * 15 + "\n")
 
 	# Création du soigneur
@@ -14,10 +14,10 @@ def main():
 
 	# Création des éléphants + lien avec les soigneur 
 	babar = Elephant()
-	print(babar.definir("Babar", appetit=40, satisfaction=80, soigneur=soigneur))
+	print(babar.definir("Babar", appetit=40, satisfaction=80, en_vie= True, soigneur=soigneur))
 
 	dumbo = Elephant()
-	print(dumbo.definir("Dumbo", appetit=70, satisfaction=50, soigneur=soigneur, ))
+	print(dumbo.definir("Dumbo", appetit=70, satisfaction=50, en_vie= True, soigneur=soigneur, ))
 
 	sophie = Girafe()
 	print(sophie.definir("Sophie",appetit= 50,satisfaction= 40, en_vie= True, soigneur= soigneur2, longueur_cou= 20))
